@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veltris</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <header>
+      <img src="videos/logo.png" class="logo">
+     
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Company</a>
+          <a href="#">Practices</a>
+          <a href="#">Offerings</a>
+          <a href="#">Accelerators</a>
+          <a href="#">Industries</a>
+          <a href="#">Resources</a>
+          <a href="signup.html">Login/Signup</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+  
+        <div class="slideshow-container">
+      
+            <div class="mySlides fade">
+              <video class ="video" src="videos/problemsolver.mp4" style="width:100%" autoplay muted loop></video>
+              <div class="text">Innovative Problem Solvers</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <video class ="video" src="videos/accelerators.mp4" style="width:100%" autoplay muted loop></video>
+              <div class="text">Accelerators</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <video class ="video" src="videos/transformational.mp4" style="width:100%" autoplay muted loop></video>
+              <div class="text">Transformational</div>
+            </div>
+
+            <div class="mySlides fade">
+              <video class ="video"  src="videos/trustedpartners.mp4" style="width:100%" autoplay muted loop></video>
+              <div class="text">Trusted Partners</div>
+            </div>
+
+            <div class="mySlides fade">
+              <video class ="video"  src="videos/agile.mp4" style="width:100%" autoplay muted loop></video>
+              <div class="text"><stron></stron>Agile</div>
+            </div>
+
+            <div class="mySlides fade">
+              <video class ="video" src="videos/design driven.mp4" style="width:100%" autoplay muted loop></video>
+              <div class="text">Design Driven</div>
+            </div>
+            
+   
+        </div>
+        <br>
+
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              slides[slideIndex-1].style.display = "block";  
+              setTimeout(showSlides, 5000); 
+            }
+        </script>
+        
+    </section>
+    
+  </body>
+</html>

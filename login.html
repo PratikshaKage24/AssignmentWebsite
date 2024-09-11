@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up </title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  <script >
+    function validateform(){  
+        var form=document.getElementById('myform');
+      
+        var firstpassword=document.getElementById('password').value;
+      
+        var x=document.getElementById('email').value;
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");
+        let lengthp= firstpassword.length;
+       console.log(firstpassword)
+        form.addEventListener('submit',(e)=>{
+          e.preventDefault();
+
+        })
+        
+    
+        if(lengthp<8)
+        {
+          alert("Password is too short!");  
+          return false; 
+        }
+        else{
+          alert("Registration successful"); 
+        setTimeout(function(){
+          window.location ='foodhome.html';
+        }) 
+        return true;  
+        }  
+      
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+          }  
+        }    
+  </script>
+  </head>
+
+
+  <body class="signupbody">
+    <video class="video" src="videos/bg.mp4" style="width:100%" autoplay muted loop></video>
+    <div class="signup-box">
+        
+    <form id='myform'  action="main.html" onsubmit=" return validateform()">
+        <h1> Login</h1><br>
+
+            <div class="input-control">
+            <input type="email" placeholder="Email" id='email' onsubmit=" return validateform()"/><br>
+            </div>
+            <div class="input-control">
+            <input type="password" placeholder="Password" id='password'/><br>
+            <div class="error"></div>
+            </div>
+    
+
+            <button type="submit" id='submit'> Submit</button>
+            <p class="register">Not a member?  <a href="signup.html">Sign Up here!</a></p>
+        </form>
+        </div>
+    
+
+
+  </body>
+</html>

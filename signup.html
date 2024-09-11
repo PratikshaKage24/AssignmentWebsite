@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  <script >
+    function validateform(){  
+        var form=document.getElementById('myform');
+        var name=document.getElementById('name').value;
+        var firstpassword=document.getElementById('password').value;
+        var secondpassword=document.getElementById('password2').value;
+        var x=document.getElementById('email').value;
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");
+        let lengthp= firstpassword.length;
+       console.log(firstpassword)
+        form.addEventListener('submit',(e)=>{
+          e.preventDefault();
+
+        })
+        
+        if (name==null || name==""){  
+          alert("Name can't be blank");  
+          return false;  } 
+        if(lengthp<8)
+        {
+          alert("Password is too short!");  
+          return false; 
+        }
+        if(firstpassword==secondpassword){ 
+          alert("Registration successful"); 
+        setTimeout(function(){
+          window.location ='main.html';
+        }) 
+        return true;  
+        }  
+       
+        else{  
+        alert("Password must be same!");  
+        return false;  
+        }  
+        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+          }  
+        }    
+  </script>
+  </head>
+
+
+  <body class="signupbody">
+    <video class="video" src="videos/bg.mp4" style="width:100%" autoplay muted loop></video>
+    <div class="container">
+    <form id='myform'  action="main.html" onsubmit=" return validateform()">
+    
+    <div class ="heading"><h1> Sign up</h1><br></div>
+        <div>
+        <input type="text" placeholder="Name" id='name' onsubmit="return validateform()" /><br>
+        <div class="error"></div>
+        </div>
+        <div >
+        <input type="email" placeholder="Email" id='email'/><br>
+        <div class="error"></div>
+        </div>
+        <div >
+        <input type="password" placeholder="Password" id='password'/><br>
+        <div class="error"></div>
+        </div>
+        <div>
+        <input type="password" placeholder="Confirm Password" id='password2'/><br>
+        <div class="error"></div>
+        </div>
+
+        <button type="submit" id='submit'> Submit</button>
+        <p class="register">Already a member?  <a href="login.html">Login here!</a></p>
+
+
+    </div>
+    </form>
+    
+    </div>
+    
+
+
+  </body>
+</html>
